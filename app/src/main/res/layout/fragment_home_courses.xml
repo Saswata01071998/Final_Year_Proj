@@ -115,7 +115,7 @@
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"
-                            android:text="Refer your friends and\n earn free course *"
+                            android:text="Hello I'm your new friend\n Have fun and learn with me"
                             android:textAlignment="center"
                             android:textColor="@color/whiteTextColor"
                             android:textSize="13sp" />
