@@ -30,9 +30,9 @@ public class MyMatchesCourses {
     public List<MatchCourse> getData() {
         return Arrays.asList(
 
-                new MatchCourse(1, "Spelling", "10 chapters available", R.drawable.spell),
-                new MatchCourse(2, "Words", "TBD", R.drawable.words),
-                new MatchCourse(3, "Alphabets", "TBD", R.drawable.alphabet_image)
+                new MatchCourse(1, "Three-Lettered Words", "10 chapters available", R.drawable.three),
+                new MatchCourse(2, "Four-Lettered Words", "TBD", R.drawable.four),
+                new MatchCourse(3, "Five-Lettered Words", "TBD", R.drawable.five)
 
 
         );
