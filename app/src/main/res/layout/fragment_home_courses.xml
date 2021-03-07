@@ -32,7 +32,7 @@
 
                 <TextView
                     style="@style/viewParent.headerText"
-                    android:text="Hello Kapil!" />
+                    android:text="Hello User!" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"

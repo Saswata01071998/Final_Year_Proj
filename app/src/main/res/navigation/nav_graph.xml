@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2020. rogergcc
-  -->
+
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,4 +22,9 @@
         android:name="com.appsnipp.education.ui.fragments.MatchesCoursesFragment"
         android:label="fragment_matches_courses"
         tools:layout="@layout/fragment_matches_courses" />
+    <fragment
+        android:id="@+id/login_page"
+        android:name="com.appsnipp.education.ui.fragments.Login"
+        android:label="login_page"
+        tools:layout="@layout/login_page" />
 </navigation>
