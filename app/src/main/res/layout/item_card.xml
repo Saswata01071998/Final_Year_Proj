@@ -32,7 +32,7 @@
         <ImageView
             android:id="@+id/card_view_image"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/img_card_height"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/course_design_thinking"
             android:contentDescription="@string/app_name" />

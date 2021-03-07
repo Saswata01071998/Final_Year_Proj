@@ -36,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Find your \nmatches courses"
+                android:text="Find other courses"
                 android:textSize="28sp"
 
                 app:layout_constraintStart_toStartOf="parent"
