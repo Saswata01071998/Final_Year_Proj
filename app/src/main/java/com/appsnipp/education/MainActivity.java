@@ -3,6 +3,7 @@ package com.appsnipp.education;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,9 @@ import com.appsnipp.education.ui.helpers.BottomNavigationBehavior;
 import com.appsnipp.education.ui.helpers.DarkModePrefManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -108,8 +112,12 @@ public class MainActivity extends AppCompatActivity
         //endregion
 
         setupNavigation();
+        EventBus.getDefault().register(this);
+        APIToDatabase apiToDatabase = new APIToDatabase();
+        apiToDatabase.retrieveData();
 
     }
+
 
     private void setupNavigation() {
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) binding.appBarMain.bottomNavigationView.getLayoutParams();
@@ -120,6 +128,16 @@ public class MainActivity extends AppCompatActivity
         if (navHostFragment != null) {
             NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         }
+
+    }
+
+    @Subscribe
+    public void apiRetrieveSuccess(EventBusPojo eventBusPojo)
+    {
+        if(eventBusPojo.getFlag()==1)
+            Toast.makeText(this, "API Success", Toast.LENGTH_LONG).show();
+        else if(eventBusPojo.getFlag()==0)
+            Toast.makeText(this, "API Fail", Toast.LENGTH_LONG).show();
     }
 
 

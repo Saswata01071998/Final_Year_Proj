@@ -1,6 +1,4 @@
-/*
- * Copyright (c) 2020. rogergcc
- */
+
 
 package com.appsnipp.education.ui.listeners;
 
@@ -10,6 +8,6 @@ import com.appsnipp.education.ui.model.CourseCard;
 
 public interface CoursesItemClickListener {
 
-    void onDashboardCourseClick(CourseCard courseCard, ImageView imageView); // Shoud use imageview to make the shared animation between the two activity
+    void onDashboardCourseClick(CourseCard courseCard, ImageView imageView,int n); // Shoud use imageview to make the shared animation between the two activity
 
 }

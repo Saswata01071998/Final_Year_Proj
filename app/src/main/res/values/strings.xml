@@ -27,4 +27,18 @@
     <string name="google_icon">google icon</string>
     <string name="facebook_icon">facebook icon</string>
     <string name="new_user_register_now">New User? Register Now</string>
+    <string name="b">B</string>
+    <string name="j">J</string>
+    <string name="m">M</string>
+    <string name="_2">2</string>
+    <string name="q">Q</string>
+    <string name="w">W</string>
+    <string name="h">H</string>
+    <string name="n">N</string>
+    <string name="_3">3</string>
+    <string name="e">E</string>
+    <string name="r">R</string>
+    <string name="_5">5</string>
+    <string name="tick">✓</string>
+    <string name="question">?</string>
 </resources>

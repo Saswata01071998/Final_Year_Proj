@@ -5,6 +5,7 @@
 package com.appsnipp.education.ui.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.appsnipp.education.PianoActivity;
 import com.appsnipp.education.R;
 import com.appsnipp.education.databinding.FragmentCoursesStaggedBinding;
 import com.appsnipp.education.ui.adapter.CourseRecyclerAdapter;
@@ -100,7 +102,13 @@ public class CoursesStaggedFragment extends Fragment
         //...perform search
     }
     @Override
-    public void onDashboardCourseClick(CourseCard courseCard, ImageView imageView) {
+    public void onDashboardCourseClick(CourseCard courseCard, ImageView imageView,int n) {
         Toast.makeText(mcontext, courseCard.getCourseTitle(), Toast.LENGTH_LONG).show();
+
+        n=n+3;
+
+        Intent intent = new Intent(mcontext, PianoActivity.class);
+        intent.putExtra("n",n);
+        startActivityForResult(intent,2);
     }
 }

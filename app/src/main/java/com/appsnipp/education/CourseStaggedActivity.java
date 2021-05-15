@@ -5,6 +5,7 @@
 package com.appsnipp.education;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -98,10 +99,14 @@ public class CourseStaggedActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDashboardCourseClick(CourseCard courseCard, ImageView imageView) {
+    public void onDashboardCourseClick(CourseCard courseCard, ImageView imageView,int n) {
 
         Toast.makeText(this, courseCard.getCourseTitle(), Toast.LENGTH_LONG).show();
+        n=n+3;
 
+        Intent intent = new Intent(getApplicationContext(),PianoActivity.class);
+        intent.putExtra("n",n);
+        startActivityForResult(intent,2);
     }
 
 
