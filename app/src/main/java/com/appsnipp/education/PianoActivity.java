@@ -296,7 +296,7 @@ public class PianoActivity extends AppCompatActivity {
 
     public void next(View view) {
         textView.setText("");
-        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setBackground(getDrawable(R.drawable.question));
         report.setText("");
         i++;
         if(i<l)
@@ -336,7 +336,7 @@ public class PianoActivity extends AppCompatActivity {
 
     public void previous(View view) {
         textView.setText("");
-        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setBackground(getDrawable(R.drawable.question));
         report.setText("");
         i--;
         if(i>=0)
@@ -371,7 +371,7 @@ public class PianoActivity extends AppCompatActivity {
 
     public void reset(View view) {
         textView.setText("");
-        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setBackground(getDrawable(R.drawable.question));
         report.setText("");
     }
     public void checkWord(Button b)
@@ -383,14 +383,14 @@ public class PianoActivity extends AppCompatActivity {
         {
             if(word.equals(realmResults.get(i).getWord()))
             {
-                report.setText("✓");
-                report.setBackground(getDrawable(R.drawable.light_green));
+                report.setText("");
+                report.setBackground(getDrawable(R.drawable.tick));
                 launchOctopops(1);
             }
             else
             {
-                report.setText("x");
-                report.setBackground(getDrawable(R.drawable.red));
+                report.setText("");
+                report.setBackground(getDrawable(R.drawable.cross));
                 launchOctopops(0);
             }
         }
@@ -400,7 +400,7 @@ public class PianoActivity extends AppCompatActivity {
             if(word.equals(realmResults.get(i).getWord().substring(0,wordl)))
             {
                 report.setText("WOW!!");
-                report.setBackground(getDrawable(R.drawable.light_green));
+                report.setBackground(getDrawable(R.drawable.green));
             }
             else {
                 report.setText("OOOPS!");
