@@ -2,13 +2,21 @@
 package com.appsnipp.education;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -53,11 +61,13 @@ public class PianoActivity extends AppCompatActivity {
     final float LEFT_VOLUME = 1.0f;
     final float RIGHT_VOLUME = 1.0f;
     SoundPool mSoundPool;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11;
-    int i=0,l,n;
+    Button b1,b2,b3,b4,b5,b6,b8,b9,b10,b11,report;
+    int i=0,l,n,wordl;
     RealmResults<RData> realmResults;
     ImageView image;
-
+    TextView textView;
+    Button button;
+    String word;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mSoundPool = new SoundPool(NR_OF_MAXSTREAM, AudioManager.STREAM_MUSIC,1);
@@ -104,15 +114,28 @@ public class PianoActivity extends AppCompatActivity {
         b4= (Button) findViewById(R.id.button4);
         b5= (Button) findViewById(R.id.button5);
         b6= (Button) findViewById(R.id.button6);
-
         b8= (Button) findViewById(R.id.button8);
         b9= (Button) findViewById(R.id.button9);
         b10= (Button) findViewById(R.id.button10);
         b11= (Button) findViewById(R.id.button11);
+        report= (Button) findViewById(R.id.report);
+        textView = (TextView) findViewById(R.id.word_check);
         l=realmResults.size();
         image=(ImageView) findViewById(R.id.imagepad);
-        if(realmResults.size()!=0)
-            new ImageLoad(realmResults.get(0).getImglink(),image).execute();
+        if(realmResults.size()!=0) {
+            String s= realmResults.get(i).getJword();
+            b2.setText(String.valueOf(s.charAt(0)));
+            b1.setText(String.valueOf(s.charAt(1)));
+            b4.setText(String.valueOf(s.charAt(2)));
+            b3.setText(String.valueOf(s.charAt(3)));
+            b5.setText(String.valueOf(s.charAt(4)));
+            b6.setText(String.valueOf(s.charAt(5)));
+            b8.setText(String.valueOf(s.charAt(7)));
+            b9.setText(String.valueOf(s.charAt(8)));
+            b10.setText(String.valueOf(s.charAt(9)));
+            b11.setText(String.valueOf(s.charAt(10)));
+            new ImageLoad(realmResults.get(0).getImglink(), image).execute();
+        }
 
     }
   /*  @Subscribe
@@ -128,20 +151,63 @@ public class PianoActivity extends AppCompatActivity {
 
     }*/
 
-    public void playB(View view){mSoundPool.play(mBSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playH(View view){mSoundPool.play(mHSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playN(View view){mSoundPool.play(mNSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playJ(View view){mSoundPool.play(mJSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playM(View view){mSoundPool.play(mMSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playQ(View view){mSoundPool.play(mQSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void play2(View view){mSoundPool.play(m2SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playW(View view){mSoundPool.play(mWSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void play3(View view){mSoundPool.play(m3SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playE(View view){mSoundPool.play(mESoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void playR(View view){mSoundPool.play(mRSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
-    public void play5(View view){mSoundPool.play(m5SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);}
+    public void playB1(View view){
 
-    public void play(View view)throws Exception{
+        mSoundPool.play(mBSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+
+
+
+    public void playB2(View view){
+        mSoundPool.play(mHSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+
+    }
+    public void playB3(View view){
+        mSoundPool.play(mNSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB4(View view){
+        mSoundPool.play(mMSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB5(View view){
+        mSoundPool.play(mQSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB6(View view){
+        mSoundPool.play(mWSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB7(View view){
+        mSoundPool.play(mESoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB8(View view){
+        mSoundPool.play(mRSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB9(View view){
+        mSoundPool.play(m5SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+    public void playB10(View view) {
+        mSoundPool.play(m5SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        button=(Button)view;
+        checkWord(button);
+    }
+
+   /* public void play(View view)throws Exception{
         String s = String.valueOf(editText.getText());
         int len = s.length();
         for(int i = 0;i < len;i++)
@@ -226,9 +292,12 @@ public class PianoActivity extends AppCompatActivity {
             }
             Thread.sleep(1000);
         }
-    }
+    }*/
 
     public void next(View view) {
+        textView.setText("");
+        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setText("");
         i++;
         if(i<l)
         {
@@ -266,7 +335,9 @@ public class PianoActivity extends AppCompatActivity {
     }
 
     public void previous(View view) {
-
+        textView.setText("");
+        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setText("");
         i--;
         if(i>=0)
         {
@@ -296,4 +367,67 @@ public class PianoActivity extends AppCompatActivity {
             EventBus.getDefault().unregister(this);
     }
 
+
+
+    public void reset(View view) {
+        textView.setText("");
+        report.setBackground(getDrawable(R.drawable.question_mark));
+        report.setText("");
+    }
+    public void checkWord(Button b)
+    {
+
+        word=textView.getText()+b.getText().toString();
+        textView.setText(word);
+        if(word.length()==n)
+        {
+            if(word.equals(realmResults.get(i).getWord()))
+            {
+                report.setText("✓");
+                report.setBackground(getDrawable(R.drawable.light_green));
+                launchOctopops(1);
+            }
+            else
+            {
+                report.setText("x");
+                report.setBackground(getDrawable(R.drawable.red));
+                launchOctopops(0);
+            }
+        }
+        else
+        {
+            wordl=word.length();
+            if(word.equals(realmResults.get(i).getWord().substring(0,wordl)))
+            {
+                report.setText("WOW!!");
+                report.setBackground(getDrawable(R.drawable.light_green));
+            }
+            else {
+                report.setText("OOOPS!");
+                report.setBackground(getDrawable(R.drawable.red));
+            }
+        }
+    }
+    private void launchOctopops(int f) {
+
+        View view;
+
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        if(f==1)
+         view = layoutInflater.inflate(R.layout.octopops,null);
+        else
+            view = layoutInflater.inflate(R.layout.octopops_w,null);
+        PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,true);
+        popupWindow.showAtLocation((ViewGroup)button.getParent(), Gravity.TOP,0,0);
+        popupWindow.setTouchable(true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                popupWindow.dismiss();
+                return false;
+            }
+        });
+
+    }
 }
