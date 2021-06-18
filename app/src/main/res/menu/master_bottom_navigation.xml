@@ -18,13 +18,13 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/matchesCoursesFragment"
+        android:id="@+id/discover_course"
         android:icon="@drawable/discover"
         android:title="Discover" />
 
     <item
         android:id="@+id/login_page"
-        android:icon="@drawable/ic_user_icon"
-        android:title="User" />
+        android:icon="@drawable/ic_baseline_audiotrack_24"
+        android:title="Fun" />
 
 </menu>

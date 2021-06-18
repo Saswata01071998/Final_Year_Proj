@@ -50,6 +50,7 @@ dependencies {
     //UI
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0-beta05'
+    implementation 'com.yuyakaido.android:card-stack-view:2.3.4'
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 //    implementation 'com.google.android.gms:play-services-auth:17.0.0'

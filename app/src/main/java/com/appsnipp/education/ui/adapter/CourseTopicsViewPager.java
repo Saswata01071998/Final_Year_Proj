@@ -72,8 +72,8 @@ public class CourseTopicsViewPager extends RecyclerView.Adapter<CourseTopicsView
 
         void setBind(MatchCourse matchCourse) {
 
-            binding.tvTitulo.setText(matchCourse.getName());
-            binding.tvCantidadCursos.setText(matchCourse.getNumberOfCourses());
+            //binding.tvTitulo.setText(matchCourse.getName());
+           // binding.tvCantidadCursos.setText(matchCourse.getNumberOfCourses());
 
             Glide.with(itemView.getContext())
                     .load(matchCourse.getImageResource())

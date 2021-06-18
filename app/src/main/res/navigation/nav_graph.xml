@@ -18,13 +18,13 @@
         android:label="fragment_courses_stagged"
         tools:layout="@layout/fragment_courses_stagged" />
     <fragment
-        android:id="@+id/matchesCoursesFragment"
-        android:name="com.appsnipp.education.ui.fragments.MatchesCoursesFragment"
-        android:label="fragment_matches_courses"
-        tools:layout="@layout/fragment_matches_courses" />
+        android:id="@+id/discover_course"
+        android:name="com.appsnipp.education.ui.fragments.Discover"
+        android:label="fragment_discover_courses"
+        tools:layout="@layout/dicover_course" />
     <fragment
         android:id="@+id/login_page"
         android:name="com.appsnipp.education.ui.fragments.Login"
         android:label="login_page"
-        tools:layout="@layout/login_page" />
+        tools:layout="@layout/activity_main2" />
 </navigation>

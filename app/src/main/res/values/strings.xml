@@ -1,5 +1,8 @@
-<resources>
-    <string name="app_name">Education</string>
+
+<resources xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <string name="app_name">MELA</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -27,18 +30,53 @@
     <string name="google_icon">google icon</string>
     <string name="facebook_icon">facebook icon</string>
     <string name="new_user_register_now">New User? Register Now</string>
-    <string name="b">B</string>
-    <string name="j">J</string>
-    <string name="m">M</string>
     <string name="_2">2</string>
-    <string name="q">Q</string>
-    <string name="w">W</string>
-    <string name="h">H</string>
-    <string name="n">N</string>
     <string name="_3">3</string>
-    <string name="e">E</string>
-    <string name="r">R</string>
     <string name="_5">5</string>
     <string name="tick">✓</string>
     <string name="question">?</string>
+    <string name="todo">TODO</string>
+    <string name="drum">DRUM</string>
+
+    <string name="musical_letters">MUSICAL   LETTERS</string>
+    <string name="musical_instruments">MUSICAL   INSTRUMENTS</string>
+    <string name="musical_lettersn">Musical Letters</string>
+    <string name="todo1">TODO!</string>
+    <string name="a">a</string>
+    <string name="nulll" />
+    <string name="b">B</string>
+    <string name="A">A</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="g">G</string>
+    <string name="h">H</string>
+    <string name="i">I</string>
+    <string name="j">J</string>
+    <string name="k">K</string>
+    <string name="l">L</string>
+    <string name="m">M</string>
+    <string name="n">N</string>
+    <string name="o">O</string>
+    <string name="p">P</string>
+    <string name="q">Q</string>
+    <string name="r">R</string>
+    <string name="s">S</string>
+    <string name="t">T</string>
+    <string name="u">U</string>
+    <string name="v">V</string>
+    <string name="w">W</string>
+    <string name="x">X</string>
+    <string name="y">Y</string>
+    <string name="z">Z</string>
+    <string name="guitar">GUITAR</string>
+    <string name="tabla">TABLA</string>
+    <string name="saxophone">SAXOPHONE</string>
+    <string name="violin">HARP</string>
+    <string name="flute">FLUTE</string>
+    <string name="sitar">SITAR</string>
+    <string name="piano">PIANO</string>
+    <string name="harmonium">HARMONIUM</string>
+    <string name="Devname">Saswata Das <br/> Tamaghno Chaudhuri <br/> Subhash Gupta</string>
 </resources>

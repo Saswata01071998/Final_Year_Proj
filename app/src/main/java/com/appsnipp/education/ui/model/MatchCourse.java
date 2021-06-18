@@ -11,12 +11,14 @@ public class MatchCourse {
     private final String name;
     private final String numberOfCourses;
     private final int imageResource;
+    private final int imageResource2;
 
-    public MatchCourse(int id, String name, String numberOfCourses, int imageResource) {
+    public MatchCourse(int id, String name, String numberOfCourses, int imageResource, int imageResource2) {
         this.id = id;
         this.name = name;
         this.numberOfCourses = numberOfCourses;
         this.imageResource = imageResource;
+        this.imageResource2 = imageResource2;
     }
 
     @Override
@@ -27,6 +29,10 @@ public class MatchCourse {
                 ", numberOfCourses='" + numberOfCourses + '\'' +
                 ", imageResource=" + imageResource +
                 '}';
+    }
+
+    public int getImageResource2() {
+        return imageResource2;
     }
 
     public int getId() {

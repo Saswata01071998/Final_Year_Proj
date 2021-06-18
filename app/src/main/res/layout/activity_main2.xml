@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffba60"
+        tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/rl1"
+
+        android:gravity="center"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:id="@+id/cmainact1"
+            android:elevation="10sp"
+            android:clickable="true"
+            app:cardCornerRadius="10sp"
+
+            android:focusable="true"
+            tools:ignore="UnusedAttribute"
+
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="240sp"
+                android:background="@drawable/instrumentslogo"
+                android:contentDescription="@string/musical_instruments">
+
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:text="@string/musical_instruments"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:fontFamily="@font/bangers"
+                android:background="#FF160A32"
+                android:padding="1sp"
+                android:textColor="@color/white"
+                >
+
+            </TextView>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/rl1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:id="@+id/cmainact2"
+            app:cardCornerRadius="15sp"
+            android:elevation="10sp"
+            android:clickable="true"
+            android:focusable="true"
+            tools:ignore="UnusedAttribute">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="240sp"
+                    android:background="@drawable/abcdtoz"
+                    android:contentDescription="@string/musical_letters">
+
+                </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:text="@string/musical_lettersn"
+                android:fontFamily="@font/bangers"
+                android:background="#121033"
+                android:textAlignment="center"
+                android:padding="1sp"
+                android:textSize="35sp"
+                android:textColor="@color/white">
+
+            </TextView>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

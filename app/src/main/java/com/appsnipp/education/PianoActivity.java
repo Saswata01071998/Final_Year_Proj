@@ -28,33 +28,33 @@ import io.realm.RealmResults;
 
 public class PianoActivity extends AppCompatActivity {
     private final int NR_OF_MAXSTREAM = 12;
+    int mASoundId;
     int mBSoundId;
-    int mHSoundId;
-    int mNSoundId;
-    int mJSoundId;
-    int mMSoundId;
-    int mQSoundId;
-    int m2SoundId;
-    int mWSoundId;
-    int m3SoundId;
-    int mESoundId;
-    int mRSoundId;
-    int m5SoundId;
-    int m0SoundId;
-    int m6SoundId;
-    int m7SoundId;
-    int m9SoundId;
     int mCSoundId;
+    int mDSoundId;
+    int mESoundId;
+    int mFSoundId;
     int mGSoundId;
+    int mHSoundId;
     int mISoundId;
+    int mJSoundId;
+    int mKSoundId;
+    int mLSoundId;
+    int mMSoundId;
+    int mNSoundId;
     int mOSoundId;
     int mPSoundId;
+    int mQSoundId;
+    int mRSoundId;
+    int mSSoundId;
     int mTSoundId;
     int mUSoundId;
     int mVSoundId;
+    int mWSoundId;
     int mXSoundId;
     int mYSoundId;
     int mZSoundId;
+
 
 
     private EditText editText;
@@ -74,33 +74,33 @@ public class PianoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.piano_pad);
 
-        mBSoundId = mSoundPool.load(this,R.raw.pb,1);
-        mHSoundId = mSoundPool.load(this,R.raw.ph,1);
-        mNSoundId = mSoundPool.load(this,R.raw.pn,1);
-        mJSoundId = mSoundPool.load(this,R.raw.pj,1);
-        mMSoundId = mSoundPool.load(this,R.raw.pm,1);
-        mQSoundId = mSoundPool.load(this,R.raw.pq,1);
-        m2SoundId = mSoundPool.load(this,R.raw.p2,1);
-        mWSoundId = mSoundPool.load(this,R.raw.pw,1);
-        m3SoundId = mSoundPool.load(this,R.raw.p3,1);
-        mESoundId = mSoundPool.load(this,R.raw.pe,1);
-        mRSoundId = mSoundPool.load(this,R.raw.pr,1);
-        m5SoundId = mSoundPool.load(this,R.raw.p5,1);
-        m0SoundId = mSoundPool.load(this,R.raw.p0,1);
-        m6SoundId = mSoundPool.load(this,R.raw.p6,1);
-        m7SoundId = mSoundPool.load(this,R.raw.p7,1);
-        m9SoundId = mSoundPool.load(this,R.raw.p9,1);
-        mCSoundId = mSoundPool.load(this,R.raw.pc,1);
-        mGSoundId = mSoundPool.load(this,R.raw.pg,1);
-        mISoundId = mSoundPool.load(this,R.raw.pi,1);
-        mOSoundId = mSoundPool.load(this,R.raw.po,1);
-        mPSoundId = mSoundPool.load(this,R.raw.pp,1);
-        mTSoundId = mSoundPool.load(this,R.raw.pt,1);
-        mUSoundId = mSoundPool.load(this,R.raw.pu,1);
-        mVSoundId = mSoundPool.load(this,R.raw.pv,1);
-        mXSoundId = mSoundPool.load(this,R.raw.px,1);
-        mYSoundId = mSoundPool.load(this,R.raw.py,1);
-        mZSoundId = mSoundPool.load(this,R.raw.pz,1);
+
+          mASoundId = mSoundPool.load(this,R.raw.a,1);
+          mBSoundId = mSoundPool.load(this,R.raw.b,1);
+          mCSoundId = mSoundPool.load(this,R.raw.c,1);
+          mDSoundId = mSoundPool.load(this,R.raw.d,1);
+          mESoundId = mSoundPool.load(this,R.raw.e,1);
+          mFSoundId = mSoundPool.load(this,R.raw.f,1);
+          mGSoundId = mSoundPool.load(this,R.raw.g,1);
+          mHSoundId = mSoundPool.load(this,R.raw.h,1);
+          mISoundId = mSoundPool.load(this,R.raw.i,1);
+          mJSoundId = mSoundPool.load(this,R.raw.j,1);
+          mKSoundId = mSoundPool.load(this,R.raw.k,1);
+          mLSoundId = mSoundPool.load(this,R.raw.l,1);
+          mMSoundId = mSoundPool.load(this,R.raw.m,1);
+          mNSoundId = mSoundPool.load(this,R.raw.n,1);
+          mOSoundId = mSoundPool.load(this,R.raw.o,1);
+          mPSoundId = mSoundPool.load(this,R.raw.p,1);
+          mQSoundId = mSoundPool.load(this,R.raw.q,1);
+          mRSoundId = mSoundPool.load(this,R.raw.r,1);
+          mSSoundId = mSoundPool.load(this,R.raw.s,1);
+          mTSoundId = mSoundPool.load(this,R.raw.t,1);
+          mUSoundId = mSoundPool.load(this,R.raw.u,1);
+          mVSoundId = mSoundPool.load(this,R.raw.v,1);
+          mWSoundId = mSoundPool.load(this,R.raw.w,1);
+          mXSoundId = mSoundPool.load(this,R.raw.x,1);
+          mYSoundId = mSoundPool.load(this,R.raw.y,1);
+          mZSoundId = mSoundPool.load(this,R.raw.z,1);
 
         Intent intent=getIntent();
         n=intent.getIntExtra("n",3);
@@ -153,7 +153,9 @@ public class PianoActivity extends AppCompatActivity {
 
     public void playB1(View view){
 
-        mSoundPool.play(mBSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
         button=(Button)view;
         checkWord(button);
     }
@@ -161,48 +163,79 @@ public class PianoActivity extends AppCompatActivity {
 
 
     public void playB2(View view){
-        mSoundPool.play(mHSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
         button=(Button)view;
         checkWord(button);
 
     }
     public void playB3(View view){
-        mSoundPool.play(mNSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
         button=(Button)view;
         checkWord(button);
     }
     public void playB4(View view){
-        mSoundPool.play(mMSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB5(View view){
-        mSoundPool.play(mQSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB6(View view){
-        mSoundPool.play(mWSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB7(View view){
-        mSoundPool.play(mESoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB8(View view){
-        mSoundPool.play(mRSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB9(View view){
-        mSoundPool.play(m5SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
     public void playB10(View view) {
-        mSoundPool.play(m5SoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+
+        Button b=findViewById(view.getId());
+        char c=b.getText().charAt(0);
+        soundCheck(c);
+
         button=(Button)view;
         checkWord(button);
     }
@@ -376,9 +409,13 @@ public class PianoActivity extends AppCompatActivity {
     }
     public void checkWord(Button b)
     {
+        word = textView.getText() + b.getText().toString();
+        wordl=word.length();
 
-        word=textView.getText()+b.getText().toString();
-        textView.setText(word);
+        if(wordl<=n) {
+
+            textView.setText(word);
+        }
         if(word.length()==n)
         {
             if(word.equals(realmResults.get(i).getWord()))
@@ -389,14 +426,15 @@ public class PianoActivity extends AppCompatActivity {
             }
             else
             {
+                textView.setText("");
                 report.setText("");
                 report.setBackground(getDrawable(R.drawable.cross));
                 launchOctopops(0);
             }
         }
-        else
+        else if(wordl<n)
         {
-            wordl=word.length();
+
             if(word.equals(realmResults.get(i).getWord().substring(0,wordl)))
             {
                 report.setText("WOW!!");
@@ -407,6 +445,7 @@ public class PianoActivity extends AppCompatActivity {
                 report.setBackground(getDrawable(R.drawable.red));
             }
         }
+
     }
     private void launchOctopops(int f) {
 
@@ -428,6 +467,70 @@ public class PianoActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+    public void soundCheck(char c)
+    {
+        int id=0;
+        c=Character.toUpperCase(c);
+        switch (c)
+        {
+            case 'A': mSoundPool.play(mASoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'B': mSoundPool.play(mBSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'C':mSoundPool.play(mCSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'D':mSoundPool.play(mDSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'E':mSoundPool.play(mESoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'F':mSoundPool.play(mFSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'G':mSoundPool.play(mGSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'H':mSoundPool.play(mHSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'I':mSoundPool.play(mISoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'J':mSoundPool.play(mJSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'K':mSoundPool.play(mKSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'L':mSoundPool.play(mLSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'M':mSoundPool.play(mMSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'N':mSoundPool.play(mNSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'O':mSoundPool.play(mOSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'P':mSoundPool.play(mPSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'Q':mSoundPool.play(mQSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);;
+                break;
+            case 'R':mSoundPool.play(mRSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'S':mSoundPool.play(mSSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'T':mSoundPool.play(mTSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'U':mSoundPool.play(mUSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'V':mSoundPool.play(mVSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'W':mSoundPool.play(mWSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'X':mSoundPool.play(mXSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'Y':mSoundPool.play(mYSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            case 'Z':mSoundPool.play(mZSoundId,LEFT_VOLUME,RIGHT_VOLUME,0,0,1);
+                break;
+            default:break;
+        }
+
+
 
     }
 }

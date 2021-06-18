@@ -74,9 +74,10 @@ public class CourseStaggedActivity extends AppCompatActivity
 
         courseCards = new ArrayList<>();
 
-        courseCards.add(new CourseCard(1, R.drawable.spell, "Spelling", "10 Chapters"));
-        courseCards.add(new CourseCard(2, R.drawable.alphabet_image, "Alphabets", "TBD"));
-        courseCards.add(new CourseCard(3, R.drawable.words, "Words", "TBD"));
+        courseCards.add(new CourseCard(1, R.drawable.three, "Spelling", "10 Chapters"));
+        courseCards.add(new CourseCard(2, R.drawable.four, "Alphabets", "TBD"));
+        courseCards.add(new CourseCard(3, R.drawable.five, "Words", "TBD"));
+        courseCards.add(new CourseCard(4, R.drawable.six_new, "Six Lettered Words", "TBD"));
 
 
         adapter = new CourseRecyclerAdapter(this, courseCards, this);

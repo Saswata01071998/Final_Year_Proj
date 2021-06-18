@@ -57,7 +57,10 @@ public class APIToDatabase {
                                 realm.commitTransaction();
                                 f=1;
                         }
-                        catch (Exception e){}
+                        catch (Exception e){
+                            realm.cancelTransaction();
+                            f=0;
+                        }
                         finally {
                             EventBus.getDefault().post(new EventBusPojo(f));
                             realm.close();

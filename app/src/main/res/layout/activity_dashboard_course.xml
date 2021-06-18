@@ -154,7 +154,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/img_card_height"
 
-                                    android:src="@drawable/spell"
+
 
                                     />
 
@@ -219,7 +219,7 @@
 
                                     android:layout_height="@dimen/img_card_height"
 
-                                    android:src="@drawable/words" />
+                                     />
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -295,7 +295,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/img_card_height"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/alphabet_image" />
+                                     />
 
                                 <TextView
                                     android:layout_width="match_parent"
