@@ -32,7 +32,7 @@
 
                 <TextView
                     style="@style/viewParent.headerText"
-                    android:text="Hello User!" />
+                    android:text="Hello Friend!" />
 
 
 
@@ -118,9 +118,7 @@
 
                         <include layout="@layout/card_popular_courses" />
 
-                        <include layout="@layout/card_popular_courses" />
 
-                        <include layout="@layout/card_popular_courses" />
 
                     </LinearLayout>
                 </HorizontalScrollView>

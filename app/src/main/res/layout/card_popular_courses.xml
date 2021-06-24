@@ -25,13 +25,13 @@
             android:adjustViewBounds="true"
             android:cropToPadding="true"
             android:maxWidth="100dp"
-            android:src="@drawable/three" />
+            android:src="@drawable/mascotttt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Four-Lettered Words"
+            android:text="Comming Soon..."
             android:textColor="@color/whiteTextColor"
             android:textSize="20sp"
             android:textStyle="bold"

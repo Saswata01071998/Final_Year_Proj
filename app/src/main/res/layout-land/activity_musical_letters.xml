@@ -7,34 +7,38 @@
     tools:context=".Musical_Letters">
 
 
+
     <RelativeLayout
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
         android:layout_height="100sp"
         android:gravity="center"
-        android:background="@color/red_700"
+        android:background="#FC7C0404"
         android:orientation="horizontal">
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:id="@+id/txt"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/chango"
+            android:drawableStart="@drawable/music_note"
             android:gravity="center"
             android:padding="5sp"
             android:text="@string/musical_letters"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:textStyle="">
+            android:textStyle="bold"
+            >
 
         </TextView>
 
         <ImageView
-            android:layout_width="70sp"
-            android:layout_height="70sp"
+            android:layout_width="75sp"
+            android:layout_height="75sp"
 
-            android:background="@drawable/music2"
+            android:background="@drawable/mascotttt"
             android:layout_margin="15sp"
             android:layout_toEndOf="@+id/txt"
             android:contentDescription="@string/todo"/>
